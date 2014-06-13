@@ -27,7 +27,7 @@
         window.onload=function()
             {
                         
-                var swf = "CytoscapeWeb";
+                var swf = "${swf}";
 
                                 // id of Cytoscape Web container div
                                 var div_id = "cytoscapeweb";
@@ -207,6 +207,11 @@
 					</li>
 				</ul>
 			</li>
+			<li><a href="#">Edit</a>
+				<ul>
+					<li><a href="#" onclick="deleteSelected(vis)">Delete Selected</a>
+				</ul>
+			</li>
 			<li><a href="#">Layout</a>
 				<ul>
 					<li><a href="#" onclick="performLayout(vis, graphLayout)">Perform Layout</a>
@@ -250,7 +255,7 @@
   			<img border="0" src="img/interaction_legend_sbgn.png" width=352 height=144>
 		</div>
 		
-		<div id="aboutDialog" class="hidden" title="About SBGNViz.as" width="500" height="500">  			
+		<div id="aboutDialog" class="hidden" title="About SBGNViz.as" width=500 height=500>  			
   			   <table width="100%" height="100%" align="center" valign="center">
 				   <tr><td>
   							<img border="0" src="img/i-vis.png" width=200 height=40 align="center">
@@ -277,7 +282,7 @@
 				   <tr><td>
   							<a href="mailto:ivis@cs.bilkent.edu.tr" target="_top" class="address-text">ivis@cs.bilkent.edu.tr</a>
   							<br>
-  							<a href="http://www.cs.bilkent.edu.tr/~ivis/sbgnviz.html" target="_blank" class="address-text">http://www.cs.bilkent.edu.tr/~ivis/SBGNViz.as/index.html</a>
+  							<a href="http://www.cs.bilkent.edu.tr/~ivis/sbgnviz.html" target="_blank" class="address-text">http://www.cs.bilkent.edu.tr/~ivis/sbgnviz.html</a>
 				   </td></tr>
 			   </table>
 		</div>

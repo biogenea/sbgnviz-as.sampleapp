@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sbgn xmlns="http://sbgn.org/libsbgn/0.2">
+    <map language="process description">
+        <glyph id="http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT" class="process">
+            <bbox y="66.550446" x="51.1474" h="15.0" w="15.0"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT.input"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT.output"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Complex_28b1dbabde4e8137d5d5068e6fbd0973" class="complex">
+            <label text="MDM2/UBCH5"/>
+            <bbox y="24.38481" x="486.95514" h="24.000002" w="117.0"/>
+            <glyph id="http___purl.org_pc2_4_Protein_3aa5f6f901bc5ce89e984f4a490f061f_http___purl.org_pc2_4_Complex_28b1dbabde4e8137d5d5068e6fbd0973" class="macromolecule">
+                <label text="UBE2D1"/>
+                <bbox y="26.38481" x="553.95514" h="20.0" w="48.0"/>
+            </glyph>
+            <glyph id="http___purl.org_pc2_4_Protein_66251b41b763f1d458fb6c596180d0fd_http___purl.org_pc2_4_Complex_28b1dbabde4e8137d5d5068e6fbd0973" class="macromolecule">
+                <label text="MDM2"/>
+                <bbox y="26.38481" x="488.95514" h="20.0" w="60.0"/>
+                <glyph id="http___purl.org_pc2_4_Protein_66251b41b763f1d458fb6c596180d0fd_http___purl.org_pc2_4_Complex_28b1dbabde4e8137d5d5068e6fbd0973.state.1" class="state variable">
+                    <state variable="S166" value="P"/>
+                    <bbox y="38.88481" x="493.95514" h="15.0" w="50.0"/>
+                </glyph>
+            </glyph>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT" class="process">
+            <bbox y="88.78176" x="401.8172" h="15.0" w="15.0"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT.input"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT.output"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_908218a1a7d1d06415a94e82a4f61663" class="macromolecule">
+            <label text="AKT1"/>
+            <bbox y="71.613945" x="116.48167" h="20.0" w="48.0"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT" class="process">
+            <bbox y="42.051804" x="84.61032" h="15.0" w="15.0"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT.input"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT.output"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_7d5e6bb03bedbefc4ab9c0b24decdb80" class="macromolecule">
+            <label text="MDM2"/>
+            <bbox y="97.43534" x="316.2379" h="20.0" w="48.0"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT" class="process">
+            <bbox y="43.0853" x="361.7392" h="15.0" w="15.0"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT.input"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT.output"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_bfed71626f5f09a86d358943f6dcb8cc" class="macromolecule">
+            <label text="MDM2"/>
+            <bbox y="39.316586" x="412.11374" h="20.0" w="48.0"/>
+            <glyph id="http___purl.org_pc2_4_Protein_bfed71626f5f09a86d358943f6dcb8cc.state.1" class="state variable">
+                <state value="Act"/>
+                <bbox y="51.816586" x="425.61374" h="15.0" w="21.0"/>
+            </glyph>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_6b3d36334928a4e124d53b8dff697f90" class="macromolecule">
+            <label text="Akt"/>
+            <bbox y="152.92755" x="157.65045" h="20.0" w="48.0"/>
+            <glyph id="http___purl.org_pc2_4_Protein_6b3d36334928a4e124d53b8dff697f90.state.1" class="state variable">
+                <state value="P"/>
+                <bbox y="165.42755" x="177.15045" h="15.0" w="9.0"/>
+            </glyph>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT" class="process">
+            <bbox y="98.288574" x="92.54221" h="15.0" w="15.0"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT.input"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT.output"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_bfc358c9a0d089a359d84e7cb825afb0" class="macromolecule">
+            <label text="MDM2"/>
+            <bbox y="113.15632" x="10.259491" h="20.0" w="60.0"/>
+            <glyph id="http___purl.org_pc2_4_Protein_bfc358c9a0d089a359d84e7cb825afb0.state.1" class="state variable">
+                <state variable="S186" value="P"/>
+                <bbox y="125.65631" x="15.259491" h="15.0" w="50.0"/>
+            </glyph>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_d4e127b7641ef9233612937c9c445102" class="macromolecule">
+            <label text="MDM2"/>
+            <bbox y="164.5614" x="11.307292" h="20.0" w="60.0"/>
+            <glyph id="http___purl.org_pc2_4_Protein_d4e127b7641ef9233612937c9c445102.state.1" class="state variable">
+                <state variable="S166" value="P"/>
+                <bbox y="177.0614" x="16.307293" h="15.0" w="50.0"/>
+            </glyph>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_a9291b1bbf1c9f4bdcd820462361285f" class="macromolecule">
+            <label text="MDM2"/>
+            <bbox y="39.966896" x="287.5144" h="20.0" w="60.0"/>
+            <glyph id="http___purl.org_pc2_4_Protein_a9291b1bbf1c9f4bdcd820462361285f.state.1" class="state variable">
+                <state variable="S188" value="P"/>
+                <bbox y="52.466896" x="292.5144" h="15.0" w="50.0"/>
+            </glyph>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_0c2e6a04bce7f1abc96ec7e03c3dc45d" class="macromolecule">
+            <label text="MDM2"/>
+            <bbox y="39.76256" x="151.66634" h="20.0" w="48.0"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Complex_7310ab60ae57c2ef6535b5aa6686d2e8" class="complex">
+            <label text="MDM2/UBCH5"/>
+            <bbox y="158.95384" x="271.29254" h="24.0" w="105.0"/>
+            <glyph id="http___purl.org_pc2_4_Protein_3aa5f6f901bc5ce89e984f4a490f061f_http___purl.org_pc2_4_Complex_7310ab60ae57c2ef6535b5aa6686d2e8" class="macromolecule">
+                <label text="UBE2D1"/>
+                <bbox y="160.95384" x="273.29254" h="20.0" w="48.0"/>
+            </glyph>
+            <glyph id="http___purl.org_pc2_4_Protein_1afdf76f680fc9c9fe40d963a7473a73_http___purl.org_pc2_4_Complex_7310ab60ae57c2ef6535b5aa6686d2e8" class="macromolecule">
+                <label text="MDM2"/>
+                <bbox y="160.95384" x="326.29254" h="20.0" w="48.0"/>
+            </glyph>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT" class="process">
+            <bbox y="677.34375" x="681.7434" h="15.0" w="15.0"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT.input"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT.output"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_3cc8f5c858ea4a4e6436d9835500ad05" class="macromolecule">
+            <label text="Mdm2"/>
+            <bbox y="101.40038" x="166.30829" h="20.0" w="60.0"/>
+            <glyph id="http___purl.org_pc2_4_Protein_3cc8f5c858ea4a4e6436d9835500ad05.state.1" class="state variable">
+                <state variable="-2147483648" value="P"/>
+                <bbox y="113.90038" x="171.30829" h="15.0" w="50.0"/>
+            </glyph>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_350935fdcaa1d738c282f6bccc8f0fc9" class="macromolecule">
+            <label text="AKT1"/>
+            <bbox y="79.09848" x="245.68973" h="20.0" w="48.0"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT" class="process">
+            <bbox y="50.373802" x="233.83682" h="15.0" w="15.0"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT.input"/>
+            <port y="0.0" x="0.0" id="http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT.output"/>
+        </glyph>
+        <glyph id="http___purl.org_pc2_4_Protein_2765afb42b78483f54ce245d02350540" class="macromolecule">
+            <label text="Mdm2"/>
+            <bbox y="150.6382" x="92.580154" h="20.0" w="48.0"/>
+        </glyph>
+        <glyph id="plasma_membrane" class="compartment">
+            <label text="plasma_membrane"/>
+            <bbox y="187.72246" x="429.77106" h="346.30927" w="231.03925"/>
+        </glyph>
+        <glyph id="cytoplasm" class="compartment">
+            <label text="cytoplasm"/>
+            <bbox y="714.62726" x="653.8949" h="97.50067" w="165.7467"/>
+        </glyph>
+        <glyph compartmentRef="plasma_membrane" id="http___purl.org_pc2_4_Protein_a54e9cf135df4421626dd9fa2d9b86c6" class="macromolecule">
+            <label text="AKT1"/>
+            <bbox y="189.72246" x="431.77106" h="20.0" w="86.0"/>
+            <glyph compartmentRef="plasma_membrane" id="http___purl.org_pc2_4_Protein_a54e9cf135df4421626dd9fa2d9b86c6.state.1" class="state variable">
+                <state variable="T308" value="P"/>
+                <bbox y="202.22246" x="436.77106" h="15.0" w="50.0"/>
+            </glyph>
+            <glyph compartmentRef="plasma_membrane" id="http___purl.org_pc2_4_Protein_a54e9cf135df4421626dd9fa2d9b86c6.state.2" class="state variable">
+                <state value="Act"/>
+                <bbox y="202.22246" x="491.77106" h="15.0" w="21.0"/>
+            </glyph>
+        </glyph>
+        <glyph compartmentRef="plasma_membrane" id="http___purl.org_pc2_4_Complex_6104724fa8f4577445d60a2489791d06" class="complex">
+            <label text="PIP3:PDK1:active AKT"/>
+            <bbox y="483.03177" x="553.8103" h="48.99997" w="105.0"/>
+            <glyph compartmentRef="plasma_membrane" id="http___purl.org_pc2_4_Protein_7e40725729befee922644c6245676e02_http___purl.org_pc2_4_Complex_6104724fa8f4577445d60a2489791d06" class="macromolecule">
+                <label text="AKT1"/>
+                <bbox y="485.03177" x="555.8103" h="20.0" w="48.0"/>
+            </glyph>
+            <glyph compartmentRef="plasma_membrane" id="http___purl.org_pc2_4_SmallMolecule_f480149e430a582841601f7701db4acb_http___purl.org_pc2_4_Complex_6104724fa8f4577445d60a2489791d06" class="simple chemical">
+                <label text="PIP3"/>
+                <bbox y="485.03177" x="608.8103" h="20.0" w="48.0"/>
+            </glyph>
+            <glyph compartmentRef="plasma_membrane" id="http___purl.org_pc2_4_Protein_75a7578fc114951fd7a56e62578139ca_http___purl.org_pc2_4_Complex_6104724fa8f4577445d60a2489791d06" class="macromolecule">
+                <label text="PDPK1"/>
+                <bbox y="510.03177" x="555.8103" h="20.0" w="48.0"/>
+            </glyph>
+        </glyph>
+        <glyph compartmentRef="cytoplasm" id="http___purl.org_pc2_4_Protein_18359bdbc485aecec52c5bfcb0811222" class="macromolecule">
+            <label text="MDM2"/>
+            <bbox y="790.1279" x="655.8949" h="20.0" w="48.0"/>
+            <glyph compartmentRef="cytoplasm" id="http___purl.org_pc2_4_Protein_18359bdbc485aecec52c5bfcb0811222.state.1" class="state variable">
+                <state value="P"/>
+                <bbox y="802.6279" x="675.3949" h="15.0" w="9.0"/>
+            </glyph>
+        </glyph>
+        <glyph compartmentRef="cytoplasm" id="http___purl.org_pc2_4_SmallMolecule_49d926ca21fbbe7597833959d5f04148" class="simple chemical">
+            <label text="ATP"/>
+            <bbox y="716.62726" x="769.6416" h="20.0" w="48.0"/>
+        </glyph>
+        <glyph compartmentRef="cytoplasm" id="http___purl.org_pc2_4_SmallMolecule_6e57be827dcf2f4c077b9943d8dc96c3" class="simple chemical">
+            <label text="ADP"/>
+            <bbox y="747.93787" x="660.3552" h="20.0" w="48.0"/>
+        </glyph>
+        <glyph compartmentRef="cytoplasm" id="http___purl.org_pc2_4_Protein_0703afb606b8e7542c2756507830c30b" class="macromolecule">
+            <label text="MDM2"/>
+            <bbox y="762.3568" x="738.2751" h="20.0" w="48.0"/>
+        </glyph>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_7d5e6bb03bedbefc4ab9c0b24decdb80" id="http___purl.org_pc2_4_Protein_7d5e6bb03bedbefc4ab9c0b24decdb80--to--http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT.input" class="consumption">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_Protein_a9291b1bbf1c9f4bdcd820462361285f" source="http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT" id="http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT.output--to--http___purl.org_pc2_4_Protein_a9291b1bbf1c9f4bdcd820462361285f" class="production">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_908218a1a7d1d06415a94e82a4f61663" id="http___purl.org_pc2_4_Protein_908218a1a7d1d06415a94e82a4f61663--to--http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT" class="catalysis">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_Protein_bfed71626f5f09a86d358943f6dcb8cc" source="http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT" id="http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT.output--to--http___purl.org_pc2_4_Protein_bfed71626f5f09a86d358943f6dcb8cc" class="production">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_908218a1a7d1d06415a94e82a4f61663" id="http___purl.org_pc2_4_Protein_908218a1a7d1d06415a94e82a4f61663--to--http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT" class="catalysis">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_2765afb42b78483f54ce245d02350540" id="http___purl.org_pc2_4_Protein_2765afb42b78483f54ce245d02350540--to--http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT.input" class="consumption">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_Protein_3cc8f5c858ea4a4e6436d9835500ad05" source="http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT" id="http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT.output--to--http___purl.org_pc2_4_Protein_3cc8f5c858ea4a4e6436d9835500ad05" class="production">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT" source="http___purl.org_pc2_4_Complex_6104724fa8f4577445d60a2489791d06" id="http___purl.org_pc2_4_Complex_6104724fa8f4577445d60a2489791d06--to--http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT" class="catalysis">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_Protein_18359bdbc485aecec52c5bfcb0811222" source="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT" id="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT.output--to--http___purl.org_pc2_4_Protein_18359bdbc485aecec52c5bfcb0811222" class="production">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_0c2e6a04bce7f1abc96ec7e03c3dc45d" id="http___purl.org_pc2_4_Protein_0c2e6a04bce7f1abc96ec7e03c3dc45d--to--http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT.input" class="consumption">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT" source="http___purl.org_pc2_4_Complex_7310ab60ae57c2ef6535b5aa6686d2e8" id="http___purl.org_pc2_4_Complex_7310ab60ae57c2ef6535b5aa6686d2e8--to--http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT.input" class="consumption">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_0703afb606b8e7542c2756507830c30b" id="http___purl.org_pc2_4_Protein_0703afb606b8e7542c2756507830c30b--to--http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT.input" class="consumption">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_a54e9cf135df4421626dd9fa2d9b86c6" id="http___purl.org_pc2_4_Protein_a54e9cf135df4421626dd9fa2d9b86c6--to--http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT" class="catalysis">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_350935fdcaa1d738c282f6bccc8f0fc9" id="http___purl.org_pc2_4_Protein_350935fdcaa1d738c282f6bccc8f0fc9--to--http___purl.org_pc2_4_BiochemicalReaction_03f00078692252d404edeb0c2212138fLEFT_TO_RIGHT" class="catalysis">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_0c2e6a04bce7f1abc96ec7e03c3dc45d" id="http___purl.org_pc2_4_Protein_0c2e6a04bce7f1abc96ec7e03c3dc45d--to--http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT.input" class="consumption">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_6b3d36334928a4e124d53b8dff697f90" id="http___purl.org_pc2_4_Protein_6b3d36334928a4e124d53b8dff697f90--to--http___purl.org_pc2_4_BiochemicalReaction_761c5feb3838ce59036411b0297bb898LEFT_TO_RIGHT" class="catalysis">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_Protein_bfc358c9a0d089a359d84e7cb825afb0" source="http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT" id="http___purl.org_pc2_4_BiochemicalReaction_e96ea90fc22e4c2ef2cd4b809475981bLEFT_TO_RIGHT.output--to--http___purl.org_pc2_4_Protein_bfc358c9a0d089a359d84e7cb825afb0" class="production">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT" source="http___purl.org_pc2_4_SmallMolecule_49d926ca21fbbe7597833959d5f04148" id="http___purl.org_pc2_4_SmallMolecule_49d926ca21fbbe7597833959d5f04148--to--http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT.input" class="consumption">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_908218a1a7d1d06415a94e82a4f61663" id="http___purl.org_pc2_4_Protein_908218a1a7d1d06415a94e82a4f61663--to--http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT" class="catalysis">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT" source="http___purl.org_pc2_4_Protein_0c2e6a04bce7f1abc96ec7e03c3dc45d" id="http___purl.org_pc2_4_Protein_0c2e6a04bce7f1abc96ec7e03c3dc45d--to--http___purl.org_pc2_4_BiochemicalReaction_48dd7a1baa62b88dfbdb78be3923f94aLEFT_TO_RIGHT.input" class="consumption">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_SmallMolecule_6e57be827dcf2f4c077b9943d8dc96c3" source="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT" id="http___purl.org_pc2_4_BiochemicalReaction_d486506e0c49121310fd452b52fdd313LEFT_TO_RIGHT.output--to--http___purl.org_pc2_4_SmallMolecule_6e57be827dcf2f4c077b9943d8dc96c3" class="production">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_Complex_28b1dbabde4e8137d5d5068e6fbd0973" source="http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT" id="http___purl.org_pc2_4_BiochemicalReaction_b2ef0d756a5763ab0dd5501c73fc928aLEFT_TO_RIGHT.output--to--http___purl.org_pc2_4_Complex_28b1dbabde4e8137d5d5068e6fbd0973" class="production">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+        <arc target="http___purl.org_pc2_4_Protein_d4e127b7641ef9233612937c9c445102" source="http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT" id="http___purl.org_pc2_4_BiochemicalReaction_0bd9dbf6a63bd47dd2247b812258d9d9LEFT_TO_RIGHT.output--to--http___purl.org_pc2_4_Protein_d4e127b7641ef9233612937c9c445102" class="production">
+            <start y="0.0" x="0.0"/>
+            <end y="0.0" x="0.0"/>
+        </arc>
+    </map>
+</sbgn>

@@ -160,6 +160,22 @@ function adjustWeights(w, vis)
 	return weights;
 };
 
+function deleteSelected(vis)
+{
+  var selectedNodes = vis.selected("nodes");
+  var selectedEdges = vis.selected("edges");
+  
+  for (var i = 0; i < selectedNodes.length; i++) 
+  { 
+    vis.removeNode(selectedNodes[i]);
+  } 
+  
+  for (var i = 0; i < selectedEdges.length; i++) 
+  { 
+    vis.removeEdge(selectedEdges[i]);
+  } 
+}
+
 function applyHighlight(neighbors, edges, vis)
 {
         var bypass = vis.visualStyleBypass() || {};
@@ -334,7 +350,7 @@ function showInteractionLegend()
 function showAboutDialog()
 {
  	$("#aboutDialog").removeClass('hidden');
-	$( "#aboutDialog" ).dialog({width: 400, height: 400});
+	$( "#aboutDialog" ).dialog({width: 338, height: 370});
 }
 
 function showLayoutProperties(currentLayoutOptions)
@@ -561,8 +577,8 @@ function readText(filePath)
 function saveFunction(fileExtension)
 {
     if(fileExtension == 'sbgnml')
-		vis.exportNetwork('sbgnml', 'export.php?type=sbgnml');
+		vis.exportNetwork('sbgnml', 'export.jsp?type=sbgnml');
 	else 
-		vis.exportNetwork('png', 'export.php?type=png');
+		vis.exportNetwork('png', 'export.jsp?type=png');
 }
 
