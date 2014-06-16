@@ -344,13 +344,13 @@ function showNodeLegend()
 function showInteractionLegend()
 {
  	$("#interactionLegendDialog").removeClass('hidden');
-	$( "#interactionLegendDialog" ).dialog({width: 500, height: 210});
+	$( "#interactionLegendDialog" ).dialog({width: 500, height: 212});
 }
 
 function showAboutDialog()
 {
  	$("#aboutDialog").removeClass('hidden');
-	$( "#aboutDialog" ).dialog({width: 338, height: 370});
+	$( "#aboutDialog" ).dialog({width: 340, height: 375});
 }
 
 function showLayoutProperties(currentLayoutOptions)
@@ -362,7 +362,7 @@ function showLayoutProperties(currentLayoutOptions)
 
 function openHowToUse()
 {
-	var url = "http://www.cs.bilkent.edu.tr/~ivis/sbgnviz/SBGNViz-1.0.UG.pdf";
+	var url = "http://www.cs.bilkent.edu.tr/~ivis/sbgnviz-as/SBGNViz.as-1.0.UG.pdf";
 	var win=window.open(url, '_blank');
 	win.focus();
 }
