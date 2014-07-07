@@ -1,421 +1,572 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
-    
-    <head>
-        <title>SBGNViz Sample Application</title>
-        
-        <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-        <script type="text/javascript" src="js/AC_OETags.js"></script>
-        <script type="text/javascript" src="js/json2.js"></script>
-        <script type="text/javascript" src="js/cytoscapeweb.js"></script>
-        <script type="text/javascript" src="utility-functions.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/sbgn.css" />
-		
-		<link rel="stylesheet" href="jquery/jquery-ui.css" />
-  		<script src="jquery/jquery-1.9.1.js"></script>
-  		<script src="jquery/jquery-ui.js"></script>
-		        
-        <script type="text/javascript">
+
+<head>
+    <title>SBGNViz.as</title>
+
+    <!-- Import CSS files -->
+    <link rel="stylesheet" type="text/css" href="css/sbgn.css" />
+    <link rel="stylesheet" href="jquery/jquery-ui.css" />
+
+    <!-- Import Javascript files -->
+    <script type="text/javascript" src="jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.expander-min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/backbone-min.js"></script>
+    <script type="text/javascript" src="js/AC_OETags.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/utility-functions.js"></script>
+    <script type="text/javascript" src="js/biogene.js"></script>
+    <script type="text/javascript" src="js/cytoscapeweb.js"></script>
+
+    <!-- Main CytoscapeWeb script -->
+    <script type="text/javascript">
+
         var vis;
         var visual_style;
-        
-        var graphLayout = {name: "SbgnPDLayout"};
+        var panZoomPosition = 'topLeft';
+
+        var graphLayout = {
+            name: "SbgnPDLayout"
+        };
         var layoutOptions = defaultOptsArray();
         currentLayoutOptions = clone(layoutOptions);
-        updateGraphLayout(layoutOptions, graphLayout);
-        
-        window.onload=function()
-            {
-                        
-                var swf = "${swf}";
+        updateGraphLayout(layoutOptions, graphLayout); 
+        window.onload = function () 
+        {	
 
-                                // id of Cytoscape Web container div
-                                var div_id = "cytoscapeweb";
-                                
-                                var paddingOffset = 5;
-							    visual_style =
-							    {
-							                nodes: 
-							                {
-							                        label: {customMapper: {functionName: "labelFunction"}},
-							                        compoundLabel: {customMapper: {functionName: "labelFunction"}},
-							                        compoundColor: "#FFFFFF",
-							                        compoundOpacity: 1.0,
-							                        opacity: 1.0,
-							                        compoundShape: {customMapper: {functionName: "compoundShapeFunction"}},
-							                        color: "#FFFFFF",
-                                              		borderColor: "#000000",
-                                                	compoundBorderColor: "#000000",
-							                        labelVerticalAnchor: "middle",
-							                        labelHorizontalAnchor: "center",
-							                        labelYOffset: { passthroughMapper: { attrName: "labelOffset" } },
-							                        compoundLabelVerticalAnchor: "top",
-							                        compoundLabelHorizontalAnchor: "center",
-							                        compoundLabelYOffset: 0.0,
-							                        compoundPaddingLeft: paddingOffset,
-					                                compoundPaddingRight: paddingOffset,
-					                                compoundPaddingTop: paddingOffset,
-					                                compoundPaddingBottom: paddingOffset,
-							                        labelFontSize:{customMapper: {functionName: "labelSizeFunction"}},
-							                        selectionGlowColor:"#1ABC9C",
-                                                	compoundSelectionGlowColor:"#1ABC9C",
-                                                	tooltipText: { passthroughMapper: { attrName: "glyph_label_text" } },
-                                                	tooltipFont: "Arial",
-										            tooltipFontSize: 12,
-										            tooltipFontColor: "#EE0505",           
-										            tooltipBackgroundColor: "#EE0505",         
-										            tooltipBorderColor: "#000000",
-										            nodeTooltipsEnabled: "true",
-										            
-							                },							
-							                edges: 
-							                {
-							                        targetArrowShape: 
-							                        {
-							                                defaultValue: "NONE",
-							                                discreteMapper: 
-							                                {
-							                                        attrName: "arc_class",
-							                                        entries: 
-							                                        [
-							                                                {attrValue:"consumption", value: "NONE"},
-							                                                {attrValue:"modulation", value: "DIAMOND"},
-							                                                {attrValue:"catalysis", value: "CIRCLE"},
-							                                                {attrValue:"inhibition", value: "T"},
-							                                                {attrValue:"production", value: "ARROW"},
-							                                                {attrValue:"stimulation", value: "ARROW"},
-							                                                {attrValue:"necessary stimulation", value: "T-ARROW"}
-							                                        ]
-							                                }
-							                        },
-							                        targetArrowColor: 
-							                        {
-							                                defaultValue: "#ffffff",
-							                                discreteMapper: 
-							                                {
-							                                        attrName: "arc_class",
-							                                        entries: 
-							                                        [
-							                                                {attrValue:"production", value: "#000000"}
-							                                        ]
-							                                }
-							                        },
-							                        selectionGlowColor:"#1ABC9C"
-							                }
-							    };
+        	//Fix for IE bug that dont allow to add onload attribute to the body tag
+        	initKeyboardAndMouse();
 
+            var swf = "${swf}";
 
+            // id of Cytoscape Web container div
+            var div_id = "cytoscapeweb";
 
-                        // init and draw
-                         vis = new org.cytoscapeweb.Visualization(div_id); 
-                            
-                         vis["labelSizeFunction"] = function (data)
-                        {
-                                var retValue = 11;
-                        
-                                if(data["glyph_class"] == "simple chemical")
-                                {
-                                        retValue = 9;
-                                }
-                                
-                                return retValue;        
+            var paddingOffset = 5;
+            visual_style = {
+                global: {
+                    selectionFillColor: "#1ABC9C",
+                    selectionFillOpacity: 0.2,
+                    selectionLineColor: "#1ABC9C",
+                    selectionLineOpacity: 2,
+                    selectionLineWidth: 1
+                },
+                nodes: 
+                {
+                	label: {customMapper: {functionName: "labelFunction"} },
+                    compoundLabel: {customMapper: {functionName: "labelFunction"}},
+                    compoundColor: "#FFFFFF",
+                    compoundOpacity: 1.0,
+                    opacity: 1.0,
+                    compoundShape: {customMapper: {functionName: "compoundShapeFunction"}},
+                    color: "#FFFFFF",
+                    borderColor: "#000000",
+                    compoundBorderColor: "#000000",
+                    labelVerticalAnchor: "middle",
+                    labelHorizontalAnchor: "center",
+                    labelYOffset: {passthroughMapper: {attrName: "labelOffset"}},
+                    compoundLabelVerticalAnchor: "top",
+                    compoundLabelHorizontalAnchor: "center",
+                    compoundLabelYOffset: 0.0,
+                    compoundPaddingLeft: paddingOffset,
+                    compoundPaddingRight: paddingOffset,
+                    compoundPaddingTop: paddingOffset,
+                    compoundPaddingBottom: paddingOffset,
+                    labelFontSize: {customMapper: {functionName: "labelSizeFunction"}},
+                    selectionGlowColor: "#1ABC9C",
+                    compoundSelectionGlowColor: "#1ABC9C",
+                    tooltipText: {passthroughMapper: {attrName: "glyph_label_text"}},
+                    tooltipFont: "Arial",
+                    tooltipFontSize: 12,
+                    tooltipFontColor: "#ffffff",
+                    tooltipBackgroundColor: "#1ABC9C",
+                    tooltipBorderColor: "#000000",
+                    compoundTooltipFont: "Arial",
+                    compoundTooltipFontSize: 12,
+                    compoundTooltipFontColor: "#ffffff",
+                    compoundTooltipBackgroundColor: "#1ABC9C",
+                    compoundTooltipBorderColor: "#000000"
+
+                },
+                edges: 
+                {
+                    targetArrowShape: 
+                    {
+                        defaultValue: "NONE",
+                        discreteMapper: {attrName: "arc_class",
+                            entries: 
+                            [
+                                {attrValue: "consumption",value: "NONE" }, 
+                                {attrValue: "modulation",value: "DIAMOND"}, 
+                                {attrValue: "catalysis",value: "CIRCLE"}, 
+                                {attrValue: "inhibition",value: "T"}, 
+                                {attrValue: "production",value: "ARROW"}, 
+                                {attrValue: "stimulation",value: "ARROW"}
+                            ]
                         }
-				
-				        vis["compoundShapeFunction"] = function (data)
-				        {
-				                var retValue = "COMPLEX";
-				
-				                if(data["glyph_class"] == "compartment")
-				                {
-				                        retValue = "COMPARTMENT";
-				                }
-				
-				                return retValue;        
-				        }
-				
-				        vis["labelFunction"] = function (data)
-				        {
-				                var retValue = data["glyph_label_text"];
-				
-				                if(data["glyph_class"] == "omitted process")
-				                {
-				                        retValue = "\\\\";
-				                }
-				
-				                if(data["glyph_class"] == "uncertain process")
-				                {
-				                        retValue = "?";
-				                }
-				
-				                if(data["glyph_class"] == "and" || data["glyph_class"] == "or" || data["glyph_class"] == "not" )
-				                {
-				                        retValue = data["glyph_class"].toUpperCase();
-				                }
-				
-				                if(data["glyph_class"] != "complex" && data["glyph_class"] != "compartment" )
-				                {
-				                         var truncateIndicator = '...';
-				                         var nameSize = retValue.length;
-				                         var truncateOffset = 5;
-				        
-				                        if (nameSize >= truncateOffset) 
-				                        {
-				                                retValue = retValue.substring(0, truncateOffset);
-				                                retValue = retValue.concat(truncateIndicator);
-				                        }
-				                }    
-				                return retValue;
-				        }
-                           
-                        vis.draw({ layout:"Preset", visualStyle: visual_style });
-                        updateLayoutProperties(currentLayoutOptions);   
-         };
-                 
-        </script>
-        
-        <style>
-            /* The Cytoscape Web container must have its dimensions set. */
-            html, body { padding: 0; margin: 0; text-align: center; }
-            #cytoscapeweb { width: 1024px; height: 768px; border-style:solid; border-width:1px; margin: 0 auto 0 auto; padding: 0; vertical-align: middle; }
-		</style>
-    </head>
-    <body>
-		<ul id="nav">
-			<li><a href="#">File</a>
-				<ul>
-					<li>
-						<li>
-							<input id="fileUpload" type="file" onchange='readText(this)' style="display:none" />
-							<a href="#"onclick="document.getElementById('fileUpload').click(); return false;">Load ...</a>
-						</li>
-						<li><a href="#" class="right-menu">Sample</a>
-							<ul id="sampleList">
-								<li id="sample1"><a href="#">Sample 1</a></li>
-								<li id="sample2"><a href="#">Sample 2</a></li>
-								<li id="sample3"><a href="#">Sample 3</a></li>
-								<li id="sample4"><a href="#">Sample 4</a></li>
-								<li id="sample5"><a href="#">Sample 5</a></li>
-								<li id="sample6"><a href="#">Sample 6</a></li>
-							</ul>		
-						</li>
-						<li><a href="#" onclick="saveFunction('sbgnml')">Save ...</a></li>
-						<li><a href="#" class="right-menu">Save as Image</a>
-							<ul>
-								<li><a href="#" onclick="saveFunction('png')">PNG</a></li>
-							</ul>
-						</li>
-					</li>
-				</ul>
-			</li>
-			<li><a href="#">Edit</a>
-				<ul>
-					<li><a href="#" onclick="deleteSelected(vis)">Delete Selected</a>
-				</ul>
-			</li>
-			<li><a href="#">Layout</a>
-				<ul>
-					<li><a href="#" onclick="performLayout(vis, graphLayout)">Perform Layout</a>
-					<li><a href="#" onclick="showLayoutProperties(currentLayoutOptions)">Layout Properties ...</a>
-				</ul>
-			</li>
-			<li><a href="#">Highlight</a>
-				<ul>
-					<li><a href="#" onclick="highlightNeighbors(vis)">Highlight Neighbors</a>
-					<li><a href="#" onclick="highlightProcesses(vis)">Highlight Processes of Selected</a>
-					<li><a href="#" onclick="removeHighlights(vis)">Remove Highlights</a>
-				</ul>
-			</li>	
-			<li><a href="#">Legends</a>
-				<ul>
-					<li><a href="#" onclick="showNodeLegend()">Node Legend</a>
-					<li><a href="#" onclick="showInteractionLegend()">Interaction Legend</a>
-				</ul>
-			</li>
-			<li><a href="#">Help</a>
-				<ul>
-					<li><a href="#" onclick="openHowToUse()">How to Use</a>
-					<li><a href="#" onclick="showAboutDialog()">About</a>
-				</ul>
-			</li>
-		</ul>
-		
-		<div id="sbgn-viz">
-            SBGN<i>Viz</i>.as
-        </div>
-    	
-        <div id="cytoscapeweb">
-            SBGN<i>Viz</i>.as is loading, please wait.
-        </div>
-        
-        <div id="nodeLegendDialog" class="hidden" title="Node Legend" width=365 height=317>
-  			<img border="0" src="img/node_legend_sbgn.png" width=365 height=317>
-		</div>
-		
-		<div id="interactionLegendDialog" class="hidden" title="Interaction Legend" width=352 height=144>
-  			<img border="0" src="img/interaction_legend_sbgn.png" width=352 height=144>
-		</div>
-		
-		<div id="aboutDialog" class="hidden" title="About SBGNViz.as" width=500 height=500>  			
-  			   <table width="100%" height="100%" align="center" valign="center">
-				   <tr><td>
-  							<img border="0" src="img/i-vis.png" width=200 height=40 align="center">
-				   </td></tr>
-				   
-				   <tr><td>
-  							<img border="0" src="img/cbio.png" width=177 height=30 align="center">
-				   </td></tr>
-				   
-				   <tr><td>
-  							<p class="sbgn-text">SBGN<i>Viz</i>.as version 1.0</p>
-				   </td></tr>
-				   
-				   <tr><td>
-  							<p class="address-text">i-Vis information Visualization Group</p>
-  							<p class="address-text">Bilkent University, Ankara, Turkey</p>
-				   </td></tr>
-				   
-				   <tr><td>
-  							<p class="address-text">Memorial Sloan-Kettering Cancer Center</p>
-  							<p class="address-text">New York, USA</p>
-				   </td></tr>
-				   
-				   <tr><td>
-  							<a href="mailto:ivis@cs.bilkent.edu.tr" target="_top" class="address-text">ivis@cs.bilkent.edu.tr</a>
-  							<br>
-  							<a href="http://www.cs.bilkent.edu.tr/~ivis/SBGNViz.as" target="_blank" class="address-text">http://www.cs.bilkent.edu.tr/~ivis/SBGNViz.as</a>
-				   </td></tr>
-			   </table>
-		</div>
-		
-		<div id="layoutPropertiesDialog" class="settings_dialog hidden" title="Layout Properties" width=352 height=144>
-            	<div id="fd_layout_settings" class="content ui-widget-content">
-                <table>    
-                    <tr title="The gravitational constant. Negative values produce a repulsive force.">
-                        <td align="right">
-                            <label>Gravitation</label>
-                        </td>
-                       	<td>
-                            <input type="text" id="gravitation" value=""/>
-                        </td>
-                    </tr>
-                    
-                    <tr title="All nodes are assumed to be pulled slightly towards the center of the network by a central gravitational force (gravitational constant) during layout.">
-                        <td align="right">
-                            <label>Central gravitation</label>
-                        </td>
-                        <td>
-                            <input type="text" id="centralGravitation" value=""/>
-                        </td>
-                    </tr>
-                    
-                    <tr title="The radius of the region in the center of the drawing, in which central gravitation is not exerted.">
-                        <td align="right">
-                            <label>Central gravity distance</label>
-                        </td>
-                        <td>
-                            <input type="text" id="centralGrDistance" value=""/>
-                        </td>
-                    </tr>
-                    
-                    <tr title="The central gravitational constant for compound nodes.">
-                        <td align="right">
-                            <label>Compound central gravitation</label>
-                        </td>
-                        <td>
-                            <input type="text" id="compoundCentGra" value=""/>
-                        </td>
-                    </tr>
-                   
-                    <tr title="The central gravitational constant for compound nodes.">
-                        <td align="right">
-                            <label>Compound central gravity distance</label>
-                        </td>
-                        <td>
-                            <input type="text" id="compCentGraDist" value=""/>
-                        </td>
-                    </tr>
-                    
-                    <tr title="The default spring tension for edges.">
-                        <td align="right">
-                            <label>Edge tension</label>
-                        </td>
-                        <td>
-                            <input type="text" id="edgeTension" value=""/>
-                        </td>
-                    </tr>
-                    
-                    <tr title="The default spring rest length for edges.">
-                        <td align="right">
-                            <label>Edge rest length</label>
-                        </td>
-                        <td>
-                            <input type="text" id="restLength" value=""/>
-                        </td>
-                    </tr>
-                    
-                    <tr title="Whether or not smart calculation of ideal rest length should be performed for inter-graph edges.">
-                        <td align="right">
-                            <label>Smart rest length</label>
-                        </td>
-                        <td align="left">
-                            <input type="checkbox" id="smartRestLength" value="true" checked="checked"/>
-                        </td>
-                    </tr>
-                    
-                    <tr title="A better quality layout requires more iterations, taking longer.">
-                        <td align="right">
-                            <label>Layout quality</label>
-                        </td>
-                        <td align="left">
-                                <select id="layoutQuality" size="1">
-                                        <option value="default">default</option>
-                                        <option value="draft">draft</option>
-                                        <option value="proof">proof</option>
-                                </select>
-                        </td>
-                    </tr>
-                    
-                    <tr title="If true, layout is applied incrementally by taking current positions of nodes into account.">
-                        <td align="right">
-                            <label>Incremental</label>
-                        </td>
-                        <td align="left">
-                            <input type="checkbox" id="incremental" value="true" checked="checked"/>
-                        </td>
-                    </tr>
+                    },
+                    targetArrowColor: {
+                        defaultValue: "#ffffff",
+                        discreteMapper: 
+                        {
+                            attrName: "arc_class",
+                            entries: [{ attrValue: "production",value: "#323237"}]
+                        }
+                    },
+                    color: "#323237",
+                    selectionGlowColor: "#1ABC9C",
+                    width: 2
+                }
+            };
 
-                    <tr title="If true, leaf (non-compound or simple) node dimensions are assumed to be uniform, resulting in faster layout.">
-                        <td align="right">
-                            <label>Uniform leaf node size</label>
-                        </td>
-                       	<td align="left">
-                            <input type="checkbox" id="uniformLeaf" value="true" checked="checked"/>
-                        </td>
-                    </tr>
+            // init and draw
+            vis = new org.cytoscapeweb.Visualization(div_id);
 
-                    <tr title="If true, gravitational repulsion forces are calculated only when node pairs are in a certain range, resulting in faster layout at the relatively minimum cost of layout quality.">
-                        <td align="right">
-                            <label>Smart distance</label>
-                        </td>
-                       	<td align="left">
-                            <input type="checkbox" id="smartDistance" value="true" checked="checked"/>
-                        </td>
-                    </tr>
+            vis["compoundShapeFunction"] = function (data) 
+            {
+                var retValue = "COMPLEX";
 
-                    <tr title="If true, multi-level scaling algorithm is applied both to better capture the overall structure of the network and to save time on large networks.">
-                        <td align="right">
-                            <label>Multi level scaling</label>
-                        </td>
-                        <td align="left">
-                            <input type="checkbox" id="multiLevelScaling" value="true" checked="checked"/>
-                        </td>
-                    </tr>
-                
-                </table>
-                
+                if (data["glyph_class"] == "compartment") {
+                    retValue = "COMPARTMENT";
+                }
+
+                return retValue;
+            }
+
+            vis["labelFunction"] = function (data) 
+            {
+                var retValue = data["glyph_label_text"];
+
+                if (data["glyph_class"] == "omitted process") {
+                    retValue = "\\\\";
+                }
+
+                if (data["glyph_class"] == "uncertain process") {
+                    retValue = "?";
+                }
+
+                if (data["glyph_class"] == "and" || data["glyph_class"] == "or" || data["glyph_class"] == "not") {
+                    retValue = data["glyph_class"].toUpperCase();
+                }
+
+                if (data["glyph_class"] != "complex" && data["glyph_class"] != "compartment") {
+                    var truncateIndicator = '...';
+                    var nameSize = retValue.length;
+                    var truncateOffset = 5;
+
+                    if (nameSize >= truncateOffset) {
+                        retValue = retValue.substring(0, truncateOffset);
+                        retValue = retValue.concat(truncateIndicator);
+                    }
+                }
+                return retValue;
+            }
+
+            vis.addListener("dblclick", "nodes", function (evt) 
+            {
+                var nodeLabel = evt.target.data.glyph_label_text;
+                if (evt.target.data["glyph_class"] == "macromolecule" ||
+                    evt.target.data["glyph_class"] == "unspecified entity" ||
+                    evt.target.data["glyph_class"] == "nucleic acid feature") 
+                {
+                    getBiogeneData(nodeLabel);
+                };
+
+            }).addListener("zoom", function (evt)
+            {
+                updateZoomScale(evt);
+            });
+
+            vis.ready(function () {
+                vis.nodeTooltipsEnabled(true);
+            }).addListener("select", function (evt) 
+            {
+                //Workaround for IE bug that occurs when cytoscapeweb gets focus and
+                //keydown event does not fire because of this.
+                window.focus();
+            });
+
+            // Sample app opens first sample by default
+            labelSizeFlag = true;
+            vis["labelSizeFunction"] = generateLabelSizeFunction();         
+            $.get("samples/"+sampleNames["1"], function(graphData) {
+                    if (typeof graphData !== "string") {
+                            if (window.ActiveXObject) {
+                                    graphData = (new XMLSerializer()).serializeToString(graphData);
+                            } else {
+                                    graphData = (new XMLSerializer()).serializeToString(graphData);
+                            }
+                    }
+                    $("#fileName-td").text(sampleNames["1"]);
+                    
+                //Draw graph as soon as data arrives.    
+                vis.draw({
+                    network: graphData,
+                    layout: "Preset",
+                    visualStyle: visual_style,
+                    panZoomControlPosition: panZoomPosition
+                });
+            });
+
+            updateLayoutProperties(currentLayoutOptions);
+        };
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body tabindex="0" >
+    <ul id="nav">
+        <li><a href="#"><span>File</span></a>
+            <ul>
+                <li>
+                    <input id="file-input" type="file" style="display:none" />
+                    <a href="#" type="file" id="load-file">Load...</a>
+                </li>
+                <li><a href="#" class="right-menu">Samples</a>
+                    <ul id="sampleList">
+                        <li id="1"><a href="#">Glycolysis</a>
+                        </li>
+                        <li id="2"><a href="#">Insulin-like Growth Factor (IGF) signalling</a>
+                        </li>
+                        <li id="3"><a href="#">MAPK cascade</a>
+                        </li>
+                        <li id="4"><a href="#">Activated STAT1alpha induction of the IRF1 gene</a>
+                        </li>
+                        <li id="5"><a href="#">Neuronal-Muscle signalling</a>
+                        </li>
+                        <li id="6"><a href="#">AR-TP53</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                	<a href="#" onclick="saveFunction('sbgnml')">Save ...</a>
+                </li>
+                <li><a href="#" class="right-menu">Save as Image</a>
+                    <ul>
+                        <li><a href="#" onclick="saveFunction('png')">PNG</a>
+                        </li>
+                        <li><a href="#" onclick="saveFunction('pdf')">PDF</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#"><span>Edit</span></a>
+            <ul>
+                <li><a href="#" onclick="deleteSelected(vis)">Delete Selected</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#"><span>Layout</span></a>
+            <ul>
+                <li><a href="#" onclick="performLayout(vis, graphLayout)">Perform Layout</a>
+                </li>
+                <li><a href="#" onclick="showLayoutProperties(currentLayoutOptions)">Layout Properties ...</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#"><span>Highlight</span></a>
+            <ul>
+                <li><a href="#" onclick="highlightNeighbors(vis)">Highlight Neighbors</a>
+                </li>
+                <li><a href="#" onclick="highlightProcesses(vis)">Highlight Processes of Selected</a>
+                </li>
+                <li><a href="#" onclick="removeHighlights(vis)">Remove Highlights</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#"><span>Legends</span></a>
+            <ul>
+                <li><a href="#" onclick="showNodeLegend()">Node Legend</a>
+                </li>
+                <li><a href="#" onclick="showInteractionLegend()">Interaction Legend</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#"><span>Help</span></a>
+            <ul>
+                 <li><a href="#" onclick="showQuickHelpDialog()">Quick Help</a>
+                </li>
+                <li><a href="#" onclick="openHowToUse()">How to Use</a>
+                </li>
+                <li><a href="#" onclick="showAboutDialog()">About</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div id="sbgn-viz-div">
+        <table id="sbgn-viz" width="100%" height="100%">
+            <tr>
+                <td id="fileName-td" style='text-align:left;'>
+                </td>
+                <td style='text-align:right;'>
+                    SBGN<i>Viz</i>.as
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="cytoscapeweb">
+        SBGN<i>Viz</i>.as is loading, please wait.
+    </div>
+
+    <div id="nodeLegendDialog" class="hidden" title="Node Legend" width=365 height=317>
+        <img border="0" src="img/node_legend_sbgn.png" width=365 height=317 />
+    </div>
+
+    <div id="interactionLegendDialog" class="hidden" title="Interaction Legend" width=352 height=144>
+        <img border="0" src="img/interaction_legend_sbgn.png" width=352 height=144>
+    </div>
+    <div id="nodeInspector" class="hidden" title="Node Properties">
+    </div>
+    <div id="aboutDialog" class="hidden" title="About SBGNViz.as" width=500 height=500>
+        <table id="aboutTable" width="100%" height="100%" align="center" valign="center">
+            <tr>
+                <td>
+                    <img border="0" src="img/i-vis.png" width=200 height=40 align="center"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img border="0" src="img/cbio.png" width=177 height=30 align="center"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="sbgn-text">SBGN<i>Viz</i>.as version 1.0</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="address-text">i-Vis information Visualization Group</p>
+                    <p class="address-text">Bilkent University, Ankara, Turkey</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="address-text">Memorial Sloan-Kettering Cancer Center</p>
+                    <p class="address-text">New York, USA</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  <p class="address-text">
+                    <a href="mailto:ivis@cs.bilkent.edu.tr" target="_top" class="address-text">ivis@cs.bilkent.edu.tr</a>
+                    <a href="https://code.google.com/p/sbgnviz-as/" target="_blank" class="address-text">https://code.google.com/p/sbgnviz-as</a>
+                  <p/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="quickHelpDialog" class="hidden" title="Quick Help" width=500 height=500>
+            <ul class="quickHelpDialog">
+                <li>
+                    <p class="help-text"><strong>File | Samples | &#60sample file&#62:</strong> Load a sample model from file in SBGN-ML</p>
+                </li>
+                <li>
+                    <p class="help-text"><strong>File | Load:</strong> Load a model from file in SBGN-ML</p>
+                </li>
+                <li>
+                    <p class="help-text"><strong>Hover a node:</strong> Display full label of the node</p>
+                </li>
+                <li>
+                    <p class="help-text"><strong>Double-click a node:</strong> Show detailed properties of a macromolecule or nucleic acid feature from BioGene</p>
+                </li>
+            </ul>
+    </div>
+    <div id="layoutPropertiesDialog" class="settings_dialog hidden" title="Layout Properties" width=352 height=144>
+        <div id="fd_layout_settings" class="content ui-widget-content">
+            <table>
+                <tr title="The gravitational constant. Negative values produce a repulsive force.">
+                    <td align="right">
+                        <label>Gravitation</label>
+                    </td>
+                    <td>
+                        <input type="text" id="gravitation" value="" />
+                    </td>
+                </tr>
+
+                <tr title="All nodes are assumed to be pulled slightly towards the center of the network by a central gravitational force (gravitational constant) during layout.">
+                    <td align="right">
+                        <label>Central gravitation</label>
+                    </td>
+                    <td>
+                        <input type="text" id="centralGravitation" value="" />
+                    </td>
+                </tr>
+
+                <tr title="The radius of the region in the center of the drawing, in which central gravitation is not exerted.">
+                    <td align="right">
+                        <label>Central gravity distance</label>
+                    </td>
+                    <td>
+                        <input type="text" id="centralGrDistance" value="" />
+                    </td>
+                </tr>
+
+                <tr title="The central gravitational constant for compound nodes.">
+                    <td align="right">
+                        <label>Compound central gravitation</label>
+                    </td>
+                    <td>
+                        <input type="text" id="compoundCentGra" value="" />
+                    </td>
+                </tr>
+
+                <tr title="The central gravitational constant for compound nodes.">
+                    <td align="right">
+                        <label>Compound central gravity distance</label>
+                    </td>
+                    <td>
+                        <input type="text" id="compCentGraDist" value="" />
+                    </td>
+                </tr>
+
+                <tr title="The default spring tension for edges.">
+                    <td align="right">
+                        <label>Edge tension</label>
+                    </td>
+                    <td>
+                        <input type="text" id="edgeTension" value="" />
+                    </td>
+                </tr>
+
+                <tr title="The default spring rest length for edges.">
+                    <td align="right">
+                        <label>Edge rest length</label>
+                    </td>
+                    <td>
+                        <input type="text" id="restLength" value="" />
+                    </td>
+                </tr>
+
+                <tr title="Whether or not smart calculation of ideal rest length should be performed for inter-graph edges.">
+                    <td align="right">
+                        <label>Smart rest length</label>
+                    </td>
+                    <td align="left">
+                        <input type="checkbox" id="smartRestLength" value="true" checked="checked" />
+                    </td>
+                </tr>
+
+                <tr title="A better quality layout requires more iterations, taking longer.">
+                    <td align="right">
+                        <label>Layout quality</label>
+                    </td>
+                    <td align="left">
+                        <select id="layoutQuality" size="1">
+                            <option value="default">default</option>
+                            <option value="draft">draft</option>
+                            <option value="proof">proof</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr title="If true, layout is applied incrementally by taking current positions of nodes into account.">
+                    <td align="right">
+                        <label>Incremental</label>
+                    </td>
+                    <td align="left">
+                        <input type="checkbox" id="incremental" value="true" checked="checked" />
+                    </td>
+                </tr>
+
+                <tr title="If true, leaf (non-compound or simple) node dimensions are assumed to be uniform, resulting in faster layout.">
+                    <td align="right">
+                        <label>Uniform leaf node size</label>
+                    </td>
+                    <td align="left">
+                        <input type="checkbox" id="uniformLeaf" value="true" checked="checked" />
+                    </td>
+                </tr>
+
+                <tr title="If true, gravitational repulsion forces are calculated only when node pairs are in a certain range, resulting in faster layout at the relatively minimum cost of layout quality.">
+                    <td align="right">
+                        <label>Smart distance</label>
+                    </td>
+                    <td align="left">
+                        <input type="checkbox" id="smartDistance" value="true" checked="checked" />
+                    </td>
+                </tr>
+
+                <tr title="If true, multi-level scaling algorithm is applied both to better capture the overall structure of the network and to save time on large networks.">
+                    <td align="right">
+                        <label>Multi level scaling</label>
+                    </td>
+                    <td align="left">
+                        <input type="checkbox" id="multiLevelScaling" value="true" checked="checked" />
+                    </td>
+                </tr>
+
+            </table>
+
             <div class="footer">
-                <input type="button" id="save_layout_settings" value="Save" onclick="saveProperties(currentLayoutOptions, graphLayout)"/>
-                <input type="button" id="default_layout_settings" value="Default" onclick="makeDefaultProperties(currentLayoutOptions,layoutOptions, graphLayout)"/>
+                <input type="button" id="save_layout_settings" value="Save" onclick="saveProperties(currentLayoutOptions, graphLayout)" />
+                <input type="button" id="default_layout_settings" value="Default" onclick="makeDefaultProperties(currentLayoutOptions,layoutOptions, graphLayout)" />
             </div>
-    </body>
+        </div>
+    </div>
+    <!-- BioGeneView template for backbone.js -->
+    <script type="text/template" id="biogene-template">
+        <div id='node-details-info'>
+            <table class="table table-condensed table-striped" cellspacing="10">
+                <tr class="biogene-info biogene-description node-details-summary">
+                    <th valign="top">Gene Summary:</th>
+                    <td colspan="2" class="expandable">
+                        <%=geneSummary %>
+                    </td>
+                </tr>
+                <tr class="biogene-info biogene-aliases">
+                    <th valign="top">Aliases:</th>
+                    <td>
+                        <%=geneAliases %>
+                    </td>
+                </tr>
+                <tr class="biogene-info biogene-description">
+                    <th>Description:</th>
+                    <td class="expandable">
+                        <%=geneDescription %>
+                    </td>
+                </tr>
+                <tr class="biogene-info biogene-location">
+                    <th valign="top">Chromosome Location:</th>
+                    <td>
+                        <%=geneLocation %>
+                    </td>
+                </tr>
+                <tr class="biogene-info biogene-uniprot-links">
+                    <th valign="top">UniProt ID:</th>
+                    <td>
+                        <a href='http://www.uniprot.org/uniprot/<%= geneUniprotId %>' target='blank'>
+                            <%=geneUniprotId %>
+                        </a>
+                        <span class='biogene-uniprot-links-extra'>
+		                          <%= geneUniprotLinks %>
+		                      </span>
+                    </td>
+                </tr>
+                <tr class="biogene-info biogene-id">
+                    <th valign="top">Gene ID:</th>
+                    <td>
+                        <a href='http://www.ncbi.nlm.nih.gov/gene?term=<%= geneId %>' target='blank'>
+                            <%=geneId %>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </script>
+    <script type="text/template" id="uniprot-link-template">
+        <a href="http://www.uniprot.org/uniprot/<%= id %>" target="_blank">
+            <%=id %>
+        </a>
+    </script>
+</body>
+
 </html>

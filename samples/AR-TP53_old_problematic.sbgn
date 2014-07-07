@@ -1,0 +1,219 @@
+<sbgn xmlns="http://sbgn.org/libsbgn/pd/0.1">
+  <map language="process description">
+    <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_3848">
+      <label text="MAPK14"/>
+      <bbox w="86.0" h="20.0" x="340.05" y="413.9"/>
+      <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_3848.state.1">
+        <state value="Act"/>
+        <bbox w="21.0" h="15.0" x="345.05" y="426.4"/>
+      </glyph>
+      <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_3848.state.2">
+        <state value="O4&amp;apos;-phospho-L-tyrosine" variable="182"/>
+        <bbox w="50.0" h="15.0" x="371.05" y="426.4"/>
+      </glyph>
+      <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_3848.state.3">
+        <state value="P" variable="T180"/>
+        <bbox w="50.0" h="15.0" x="426.05" y="426.4"/>
+      </glyph>
+    </glyph>
+    <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_17089">
+      <label text="p38alpha-beta-active"/>
+      <bbox w="48.0" h="20.0" x="834.75" y="395.05"/>
+      <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_17089.state.1">
+        <state value="Act"/>
+        <bbox w="21.0" h="15.0" x="848.25" y="407.55"/>
+      </glyph>
+    </glyph>
+    <glyph class="complex" id="http://pid.nci.nih.gov/biopaxpid_35409">
+      <label text="Gi family/GNB1/GNG2/GDP"/>
+      <bbox w="105.0" h="49.0" x="600.05" y="222.45"/>
+      <glyph class="simple chemical" id="http://pid.nci.nih.gov/biopaxpid_678|http://pid.nci.nih.gov/biopaxpid_35409">
+        <label text="GDP"/>
+        <clone/>
+        <bbox w="36.0" h="15.0" x="607.55" y="229.95"/>
+      </glyph>
+      <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_5511|http://pid.nci.nih.gov/biopaxpid_35409">
+        <label text="GNB1"/>
+        <bbox w="48.0" h="20.0" x="607.55" y="254.95"/>
+      </glyph>
+      <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_623|http://pid.nci.nih.gov/biopaxpid_35409">
+        <label text="Gi family"/>
+        <bbox w="48.0" h="20.0" x="607.55" y="279.95"/>
+      </glyph>
+      <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_5514|http://pid.nci.nih.gov/biopaxpid_35409">
+        <label text="GNG2"/>
+        <bbox w="48.0" h="20.0" x="648.55" y="229.95"/>
+      </glyph>
+    </glyph>
+    <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_62292">
+      <label text="TP53"/>
+      <bbox w="86.0" h="20.0" x="808.1" y="469.3"/>
+      <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_62292.state.1">
+        <state value="Act"/>
+        <bbox w="21.0" h="15.0" x="813.1" y="481.8"/>
+      </glyph>
+      <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_62292.state.2">
+        <state value="P" variable="S392"/>
+        <bbox w="50.0" h="15.0" x="839.1" y="481.8"/>
+      </glyph>
+    </glyph>
+    <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_2166">
+      <label text="TP53"/>
+      <bbox w="48.0" h="20.0" x="706.25" y="393.3"/>
+    </glyph>
+    <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_21151">
+      <label text="p38alpha-beta"/>
+      <bbox w="48.0" h="20.0" x="736.8" y="323.2"/>
+    </glyph>
+    <glyph class="process" id="http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT">
+      <bbox w="15.0" h="15.0" x="777" y="419.7"/>
+      <port id="http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT.input" x="0.0" y="0.0"/>
+      <port id="http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT.output" x="0.0" y="0.0"/>
+    </glyph>
+    <glyph class="complex" id="http://pid.nci.nih.gov/biopaxpid_31826">
+      <label text="Gi family/GTP"/>
+      <bbox w="93.00003" h="24.0" x="766.5" y="73.85"/>
+      <glyph class="simple chemical" id="http://pid.nci.nih.gov/biopaxpid_685|http://pid.nci.nih.gov/biopaxpid_31826">
+        <label text="GTP"/>
+        <clone/>
+        <bbox w="36.0" h="15.0" x="774" y="81.35"/>
+      </glyph>
+      <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_623|http://pid.nci.nih.gov/biopaxpid_31826">
+        <label text="Gi family"/>
+        <bbox w="48.0" h="20.0" x="774" y="101.35"/>
+      </glyph>
+      <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_31826.state.1">
+        <state value="Act"/>
+        <bbox w="21.0" h="15.0" x="763.5" y="66.35"/>
+      </glyph>
+    </glyph>
+    <glyph class="process" id="http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT">
+      <bbox w="15.0" h="15.0" x="831.05" y="343.2"/>
+      <port id="http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT.input" x="0.0" y="0.0"/>
+      <port id="http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT.output" x="0.0" y="0.0"/>
+    </glyph>
+    <glyph class="simple chemical" id="http://pid.nci.nih.gov/biopaxpid_685http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT">
+      <label text="GTP"/>
+      <clone/>
+      <bbox w="36.0" h="15.0" x="717.15" y="258.55"/>
+    </glyph>
+    <glyph class="simple chemical" id="http://pid.nci.nih.gov/biopaxpid_678http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT">
+      <label text="GDP"/>
+      <clone/>
+      <bbox w="36.0" h="15.0" x="838.95" y="130.35"/>
+    </glyph>
+    <glyph class="compartment" id="cytoplasm">
+      <label text="cytoplasm"/>
+      <bbox w="196.37202" h="50.94359" x="764.25" y="174.475"/>
+      <glyph class="process" id="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT">
+        <bbox w="15.0" h="15.0" x="771.75" y="182"/>
+        <port id="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT.input" x="0.0" y="0.0"/>
+        <port id="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT.output" x="0.0" y="0.0"/>
+      </glyph>
+      <glyph class="complex" id="http://pid.nci.nih.gov/biopaxpid_21741" compartmentRef="cytoplasm">
+        <label text="GNB1/GNG2"/>
+        <bbox w="105.000015" h="24.0" x="829" y="212"/>
+        <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_5514|http://pid.nci.nih.gov/biopaxpid_21741" compartmentRef="cytoplasm">
+          <label text="GNG2"/>
+          <bbox w="48.0" h="20.0" x="836.5" y="219.5"/>
+        </glyph>
+        <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_5511|http://pid.nci.nih.gov/biopaxpid_21741" compartmentRef="cytoplasm">
+          <label text="GNB1"/>
+          <bbox w="48.0" h="20.0" x="836.5" y="244.5"/>
+        </glyph>
+        <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_21741.state.1" compartmentRef="cytoplasm">
+          <state value="Act"/>
+          <bbox w="21.0" h="15.0" x="826" y="204.5"/>
+        </glyph>
+      </glyph>
+    </glyph>
+    <glyph class="compartment" id="plasma membrane">
+      <label text="plasma membrane"/>
+      <bbox w="109.0" h="28.0" x="618.2" y="85.39999999999999"/>
+      <glyph class="complex" id="http://pid.nci.nih.gov/biopaxpid_35449" compartmentRef="plasma membrane">
+        <label text="T-DHT/AR"/>
+        <bbox w="105.0" h="24.0" x="625.7" y="92.9"/>
+        <glyph class="simple chemical" id="http://pid.nci.nih.gov/biopaxpid_33441|http://pid.nci.nih.gov/biopaxpid_35449" compartmentRef="plasma membrane">
+          <label text="T-DHT"/>
+          <bbox w="48.0" h="20.0" x="633.2" y="100.4"/>
+        </glyph>
+        <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_33449|http://pid.nci.nih.gov/biopaxpid_35449" compartmentRef="plasma membrane">
+          <label text="AR"/>
+          <bbox w="48.0" h="20.0" x="633.2" y="125.4"/>
+        </glyph>
+      </glyph>
+    </glyph>
+    <glyph class="compartment" id="nucleus">
+      <label text="nucleus"/>
+      <bbox w="402.53333" h="193.81616" x="200.375" y="208.64999999999998"/>
+      <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_42702" compartmentRef="nucleus">
+        <label text="TP53"/>
+        <bbox w="110.0" h="20.0" x="405.2" y="224.65"/>
+        <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_42702.state.1" compartmentRef="nucleus">
+          <state value="P" variable="S315"/>
+          <bbox w="50.0" h="15.0" x="410.2" y="237.15"/>
+        </glyph>
+        <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_42702.state.2" compartmentRef="nucleus">
+          <state value="P" variable="S33"/>
+          <bbox w="45.0" h="15.0" x="465.2" y="237.15"/>
+        </glyph>
+        <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_42702.state.3" compartmentRef="nucleus">
+          <state value="P" variable="T81"/>
+          <bbox w="45.0" h="15.0" x="515.2" y="237.15"/>
+        </glyph>
+      </glyph>
+      <glyph class="process" id="http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT">
+        <bbox w="15.0" h="15.0" x="415.75" y="301.05"/>
+        <port id="http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT.input" x="0.0" y="0.0"/>
+        <port id="http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT.output" x="0.0" y="0.0"/>
+      </glyph>
+      <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_17220" compartmentRef="nucleus">
+        <label text="TP53"/>
+        <bbox w="48.0" h="20.0" x="474.25" y="326.4"/>
+      </glyph>
+      <glyph class="complex" id="http://pid.nci.nih.gov/biopaxpid_42384" compartmentRef="nucleus">
+        <label text="p53 (tetramer)"/>
+        <bbox w="52.0" h="24.0" x="212.4" y="321.75"/>
+        <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_2166|http://pid.nci.nih.gov/biopaxpid_42384" compartmentRef="nucleus">
+          <label text="TP53"/>
+          <bbox w="48.0" h="20.0" x="219.9" y="329.25"/>
+        </glyph>
+      </glyph>
+      <glyph class="process" id="http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT">
+        <bbox w="15.0" h="15.0" x="306.85" y="300.7"/>
+        <port id="http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT.input" x="0.0" y="0.0"/>
+        <port id="http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT.output" x="0.0" y="0.0"/>
+      </glyph>
+      <glyph class="complex" id="http://pid.nci.nih.gov/biopaxpid_42438" compartmentRef="nucleus">
+        <label text="p53 (tetramer)"/>
+        <bbox w="59.0" h="24.0" x="306.4" y="216.15"/>
+        <glyph class="macromolecule" id="http://pid.nci.nih.gov/biopaxpid_42439|http://pid.nci.nih.gov/biopaxpid_42438" compartmentRef="nucleus">
+          <label text="TP53"/>
+          <bbox w="55.0" h="20.0" x="313.9" y="227.65"/>
+          <glyph class="state variable" id="http://pid.nci.nih.gov/biopaxpid_42439|http://pid.nci.nih.gov/biopaxpid_42438.state.1" compartmentRef="nucleus">
+            <state value="P" variable="S46"/>
+            <bbox w="45.0" h="15.0" x="318.9" y="240.15"/>
+          </glyph>
+        </glyph>
+      </glyph>
+    </glyph>
+    <arc class="consumption" id="http://pid.nci.nih.gov/biopaxpid_21151--to--http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT.input" source="http://pid.nci.nih.gov/biopaxpid_21151" target="http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT"/>
+    <arc class="catalysis" id="http://pid.nci.nih.gov/biopaxpid_3848--to--http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT" source="http://pid.nci.nih.gov/biopaxpid_3848" target="http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT"/>
+    <arc class="catalysis" id="http://pid.nci.nih.gov/biopaxpid_35449--to--http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT" source="http://pid.nci.nih.gov/biopaxpid_35449" target="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT"/>
+    <arc class="production" id="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT.output--to--http://pid.nci.nih.gov/biopaxpid_31826" source="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT" target="http://pid.nci.nih.gov/biopaxpid_31826"/>
+    <arc class="production" id="http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT.output--to--http://pid.nci.nih.gov/biopaxpid_42438" source="http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT" target="http://pid.nci.nih.gov/biopaxpid_42438"/>
+    <arc class="production" id="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT.output--to--http://pid.nci.nih.gov/biopaxpid_678http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT" source="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT" target="http://pid.nci.nih.gov/biopaxpid_678http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT"/>
+    <arc class="production" id="http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT.output--to--http://pid.nci.nih.gov/biopaxpid_17089" source="http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT" target="http://pid.nci.nih.gov/biopaxpid_17089"/>
+    <arc class="consumption" id="http://pid.nci.nih.gov/biopaxpid_42384--to--http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT.input" source="http://pid.nci.nih.gov/biopaxpid_42384" target="http://pid.nci.nih.gov/biopaxpid_42983LEFT_TO_RIGHT"/>
+    <arc class="consumption" id="http://pid.nci.nih.gov/biopaxpid_35409--to--http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT.input" source="http://pid.nci.nih.gov/biopaxpid_35409" target="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT"/>
+    <arc class="catalysis" id="http://pid.nci.nih.gov/biopaxpid_21741--to--http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT" source="http://pid.nci.nih.gov/biopaxpid_21741" target="http://pid.nci.nih.gov/biopaxpid_50156LEFT_TO_RIGHT"/>
+    <arc class="catalysis" id="http://pid.nci.nih.gov/biopaxpid_17089--to--http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT" source="http://pid.nci.nih.gov/biopaxpid_17089" target="http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT"/>
+    <arc class="production" id="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT.output--to--http://pid.nci.nih.gov/biopaxpid_21741" source="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT" target="http://pid.nci.nih.gov/biopaxpid_21741"/>
+    <arc class="consumption" id="http://pid.nci.nih.gov/biopaxpid_685http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT--to--http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT.input" source="http://pid.nci.nih.gov/biopaxpid_685http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT" target="http://pid.nci.nih.gov/biopaxpid_35537LEFT_TO_RIGHT"/>
+    <arc class="consumption" id="http://pid.nci.nih.gov/biopaxpid_2166--to--http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT.input" source="http://pid.nci.nih.gov/biopaxpid_2166" target="http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT"/>
+    <arc class="catalysis" id="http://pid.nci.nih.gov/biopaxpid_3848--to--http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT" source="http://pid.nci.nih.gov/biopaxpid_3848" target="http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT"/>
+    <arc class="production" id="http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT.output--to--http://pid.nci.nih.gov/biopaxpid_62292" source="http://pid.nci.nih.gov/biopaxpid_62324LEFT_TO_RIGHT" target="http://pid.nci.nih.gov/biopaxpid_62292"/>
+    <arc class="production" id="http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT.output--to--http://pid.nci.nih.gov/biopaxpid_42702" source="http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT" target="http://pid.nci.nih.gov/biopaxpid_42702"/>
+    <arc class="consumption" id="http://pid.nci.nih.gov/biopaxpid_17220--to--http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT.input" source="http://pid.nci.nih.gov/biopaxpid_17220" target="http://pid.nci.nih.gov/biopaxpid_42701LEFT_TO_RIGHT"/>
+  </map>
+</sbgn>

@@ -1,3 +1,19 @@
+/* The Cytoscape Web container must have its dimensions set. */
+html,body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#cytoscapeweb {
+    width: 1014px;
+    height: 768px;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 auto 0 auto;
+    padding: 5px;
+    vertical-align: middle;
+}
 
 a {
 	color: #333;
@@ -19,7 +35,13 @@ a {
 	float: left;
 	position: relative;
 	list-style: none;
-	width: 60px;
+	width: 65px;
+	height: 20px;
+	padding-top: auto;
+}
+
+#nav span {
+	vertical-align:middle;
 }
 
 
@@ -27,10 +49,11 @@ a {
 #nav a {
 	color: #3333;
 	text-decoration: none;
-	font-size:0.7em;
+	font-size:0.8em;
 	font-family: "Arial";
 	display: block;
 	margin: 0;
+	height: 20px;
 	
 }
 #nav a:hover {
@@ -42,7 +65,7 @@ a {
 #nav .current a, #nav li:hover > a {
 	background: #1ABC9C;
 	color: #444;
-	height: 20px;
+	height: 24px;
 }
 
 /* sub levels link hover */
@@ -51,12 +74,10 @@ a {
 	border: none;
 	color: #000000;
 	text-align: left;
-	padding-left: 10px;
-	padding-right: auto;
 	margin: auto;
 	height: 20px;
 	text-decoration: none;
-	font-size:0.7em;
+	font-size:0.8em;
 	font-family: "Arial";
 }
 
@@ -73,7 +94,6 @@ a {
 /* dropdown */
 #nav li:hover > ul {
 	display: block;
-	margin: auto;
 }
 
 /* level 2 list */
@@ -110,7 +130,7 @@ a {
 /* level 3+ list */
 #nav ul ul {
 	top: -1px;
-	width: 63px !important;
+	width: auto !important;
 	left: 100%;
 }
 
@@ -156,10 +176,17 @@ a.right-menu
 
 .address-text {
 	font-size:11px;
+	margin: 0px;
 }
 
 /* layout settings panel */
 
+#fd_layout_settings
+{
+	width: 100%;
+	height: 100%;
+	border: none;
+}
 
 .settings_dialog #fd_layout_settings table
 {
@@ -206,5 +233,70 @@ a.right-menu
 	margin: 0 auto 0 auto; 
 	padding: 0; 
 	vertical-align: middle;
-	text-align: right;​
+}
+
+#node-details-info 
+{
+	text-align: left;
+	font-size:0.7em;
+	font-family: "Arial";
+}
+
+.detailsAlertLabel
+{
+	text-align: center;
+	vertical-align: middle;
+	display:table-cell;
+	font-size:0.9em;
+	font-family: "Arial";
+	min-width: 300px;
+}
+
+.loadingImage
+{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -88px; /* -1 * image width / 2 */
+    margin-top: -88px;  /* -1 * image height / 2 */
+    display: block;   
+}
+
+table#aboutTable td
+{
+	margin: 0px;
+    padding: 0px;
+}
+
+
+table#aboutTable 
+{
+  	border-collapse: collapse;
+}
+
+table#quickHelpDialog tr
+{
+	margin: 0px;
+    padding: 0px;
+
+}
+
+
+table#quickHelpDialog 
+{
+  	border-collapse: collapse;
+  	border-spacing:1em;
+}
+
+
+.help-text
+{
+	font-size:11px;
+	margin: 0px;
+	text-align: left;
+}
+
+#quickHelpDialog
+{
+	padding-left: inherit;
 }
